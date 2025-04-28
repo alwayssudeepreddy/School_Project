@@ -18,6 +18,9 @@ const db = new Client({
 db.connect()
   .then(() => console.log('Connected to PostgreSQL database'))
   .catch(err => console.error('Database connection error:', err.stack));
+app.get('/', (req, res) => {
+  res.send('Hello from School Project Backend!');
+});
 
 app.post("/addSchool", async (req, res) => {
   const { name, address, latitude, longitude } = req.body;
